@@ -1,0 +1,285 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Warm cream background */
+    --background: 35 50% 97%;
+    --foreground: 25 30% 20%;
+
+    /* Card surfaces */
+    --card: 35 45% 99%;
+    --card-foreground: 25 30% 20%;
+
+    --popover: 35 45% 99%;
+    --popover-foreground: 25 30% 20%;
+
+    /* Warm orange primary */
+    --primary: 24 95% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 24 90% 70%;
+    --primary-glow: 24 100% 85%;
+
+    /* Soft peach secondary */
+    --secondary: 28 60% 92%;
+    --secondary-foreground: 25 40% 30%;
+
+    /* Muted warm tones */
+    --muted: 30 30% 92%;
+    --muted-foreground: 25 15% 50%;
+
+    /* Subtle accent */
+    --accent: 35 80% 90%;
+    --accent-foreground: 25 40% 25%;
+
+    /* Soft coral for destructive */
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Warm borders */
+    --border: 30 25% 88%;
+    --input: 30 30% 90%;
+    --ring: 24 95% 58%;
+
+    --radius: 1rem;
+
+    /* Custom gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(24 95% 58%) 0%, hsl(35 90% 65%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(35 50% 97%) 0%, hsl(30 45% 94%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(35 45% 99%) 0%, hsl(30 40% 96%) 100%);
+    --gradient-sunset: linear-gradient(135deg, hsl(24 95% 58%) 0%, hsl(15 85% 55%) 50%, hsl(35 90% 65%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(24 50% 50% / 0.15);
+    --shadow-card: 0 2px 12px -2px hsl(24 50% 50% / 0.1);
+    --shadow-glow: 0 0 30px hsl(24 95% 58% / 0.2);
+
+    /* Sidebar - warm tones */
+    --sidebar-background: 35 45% 99%;
+    --sidebar-foreground: 25 30% 25%;
+    --sidebar-primary: 24 95% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 28 60% 92%;
+    --sidebar-accent-foreground: 25 40% 30%;
+    --sidebar-border: 30 25% 88%;
+    --sidebar-ring: 24 95% 58%;
+
+    /* Family relationship colors */
+    --family-parent: 24 90% 60%;
+    --family-child: 45 85% 60%;
+    --family-sibling: 180 50% 55%;
+    --family-grandparent: 340 60% 65%;
+    --family-spouse: 0 70% 60%;
+    --family-other: 200 50% 55%;
+
+    /* Paper colors */
+    --cream: 40 40% 94%;
+  }
+
+  .dark {
+    --background: 25 25% 10%;
+    --foreground: 35 30% 92%;
+
+    --card: 25 20% 14%;
+    --card-foreground: 35 30% 92%;
+
+    --popover: 25 20% 14%;
+    --popover-foreground: 35 30% 92%;
+
+    --primary: 24 90% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 24 70% 45%;
+    --primary-glow: 24 80% 35%;
+
+    --secondary: 25 20% 20%;
+    --secondary-foreground: 35 30% 90%;
+
+    --muted: 25 15% 22%;
+    --muted-foreground: 30 20% 60%;
+
+    --accent: 25 25% 22%;
+    --accent-foreground: 35 30% 92%;
+
+    --destructive: 0 55% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 25 15% 22%;
+    --input: 25 15% 22%;
+    --ring: 24 90% 55%;
+
+    --gradient-warm: linear-gradient(135deg, hsl(24 90% 55%) 0%, hsl(35 70% 45%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(25 25% 10%) 0%, hsl(25 20% 12%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(25 20% 14%) 0%, hsl(25 18% 12%) 100%);
+
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.4);
+    --shadow-card: 0 2px 12px -2px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 30px hsl(24 90% 55% / 0.15);
+
+    --sidebar-background: 25 20% 12%;
+    --sidebar-foreground: 35 30% 90%;
+    --sidebar-primary: 24 90% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 25 20% 18%;
+    --sidebar-accent-foreground: 35 30% 90%;
+    --sidebar-border: 25 15% 20%;
+    --sidebar-ring: 24 90% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    background: var(--gradient-soft);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .font-body {
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .gradient-soft {
+    background: var(--gradient-soft);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.4s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
+
+/* Web app responsive container */
+@media (min-width: 768px) {
+  .max-w-lg {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .max-w-lg {
+    max-width: 768px;
+  }
+}
+
+/* Safe area for mobile browsers */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
